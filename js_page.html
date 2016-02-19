@@ -1,0 +1,41 @@
+<html>
+<head><title>Hi there</title>
+<script type="text/javascript">
+function checkPassword(){
+    var f = document.enterForm;
+    var pw = f.passphrase.value;
+    if(pw.toLowerCase() == "os")
+    //if(pw.toLowerCase() == "open sesame")
+    {
+        f.parentNode.removeChild(f);
+        
+        var sp = document.getElementById("SecretPicture");
+        sp.innerHTML="Here is an image: ";
+        var img = document.createElement("img");
+        img.src = "cutecat.jpg";
+        sp.appendChild(img);
+    }
+    else
+    {
+        alert("Incorrect Passphrase");
+    }
+    return false;
+}
+
+</script>
+</head>
+<body>
+<p>
+Welcome to my page. Here is a <a href="http://google.com">link</a>.
+</p>
+
+<p id="SecretPicture">
+<form name="enterForm" onsubmit="return checkPassword()">
+Enter the secret passphrase:
+<input type="password" name="passphrase" />
+<input type="submit" value="Submit" />
+</form>
+</p>
+
+</body>
+</html>
