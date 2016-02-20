@@ -1,9 +1,12 @@
-import datetime
+import time
 import sys
 
 class Adder(object):
     def __init__(self):
-        pass
+        self.start = None
+        self.end = None
+        self.total = 0
+        self.complete = False
 
     def run_to(self, end):
         self.start_timer()
@@ -15,22 +18,28 @@ class Adder(object):
         print("Summed numbers up to: " + str(end) + " resulting in: " + str(result) +
               " in: " + str(self.elapsed_seconds()) + " seconds.")
 
+        self.complete = True
+
     def add_numbers_to(self, end):
-        total = 0
+        self.total = 0
         number = 1
         while number <= end:
-            total = total + number
+            self.total = self.total + number
             number = number + 1
-        return total
+        return self.total
 
     def start_timer(self):
-        self.start = datetime.datetime.now()
+        self.start = time.time()
 
     def end_timer(self):
-        self.end = datetime.datetime.now()
+        self.end = time.time()
 
     def elapsed_seconds(self):
-        return (self.end - self.start).total_seconds()
+        if not self.start:
+            raise Exception("Run not started")
+        elif not self.end:
+            return time.time() - self.start
+        return self.end - self.start
 
     def check(self, end, to_check):
         if to_check != self.fast_algorithm(end):
