@@ -37,7 +37,7 @@ class AdderApp(Frame):
         self.quit_btn.bind("<Return>", (lambda e, b=self.quit_btn: b.invoke()))
         self.run_btn = Button(self.buttons, text="Run", command=self.run, default=Tkinter.ACTIVE)
         self.run_btn.pack(side=Tkinter.LEFT)
-        
+
         self.pack(fill=Tkinter.X)
         self.master.bind("<Return>", (lambda e, b=self.run_btn: b.invoke()))
 
@@ -62,6 +62,7 @@ class AdderApp(Frame):
             pass
 
         if self.add_run.complete:
+            self.add_run.complete = False
             self.complete_msg.set("Run Complete")
             self.quit_btn.focus_set()
 
