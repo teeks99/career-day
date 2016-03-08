@@ -1,4 +1,6 @@
 * Introduce
+  * Software engineer
+  * Learned a lot on my own
 * Sum integers...how fast can you go in 10 sec?
   * 1:1, 2:3, 3:6, 4:10, 5:15, 6:21, 7:28, 8:36, 9:45, 10:55, 11:66, 12:78, 13:91, 14:105, 15, 120
   * Fast algorithm
