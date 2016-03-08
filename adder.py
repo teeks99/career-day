@@ -56,7 +56,7 @@ class Adder(object):
         return number & 1
 
 if __name__ == "__main__":
-    try_number = 130000000
+    try_number = 70000000
 
     if len(sys.argv) > 1:
         try_number = int(sys.argv[1])

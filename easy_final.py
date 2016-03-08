@@ -4,7 +4,7 @@ start = time.time()
 
 total = 0
 number = 1
-end = 130000000
+end = 70000000
 
 while number <= end:
     total = total + number
